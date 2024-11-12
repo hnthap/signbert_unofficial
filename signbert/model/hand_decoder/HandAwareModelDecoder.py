@@ -1,7 +1,7 @@
 import torch
 from torch import nn
 
-from signbert.mano.manolayer import ManoLayer
+from manotorch.manolayer import ManoLayer
 from IPython import embed; from sys import exit
 
 

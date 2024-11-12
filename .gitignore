@@ -170,3 +170,6 @@ cython_debug/
 #.idea/
 
 .vscode
+
+!signbert/model/thirdparty/mano_assets/.gitkeep
+signbert/model/thirdparty/mano_assets/*
