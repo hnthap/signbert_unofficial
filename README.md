@@ -9,14 +9,14 @@ I use Windows personally, and the setup process listed below is for Windows only
 The contents of submodules are not cloned by default. Once cloned, execute the
 following:
 
-```bash
+```powershell
 git submodule init
 git submodule update
 ```
 
 Or clone using the flag:
 
-```bash
+```powershell
 git clone --recurse-submodules <REPO_URL>
 ```
 
@@ -28,7 +28,7 @@ git clone --recurse-submodules <REPO_URL>
 4. Extract the `*.zip` inside the `signbert/model/thirdparty/mano_assets` folder
 5. Folder structure should look like this:
 
-```bash
+```powershell
 mano_assets/
     ├── info.txt
     ├── __init__.py
@@ -46,14 +46,14 @@ mano_assets/
 
 ## Create virtual environment
 
-```bash
+```powershell
 conda create --name signbertpcu121 python=3.9.18
 conda activate signbertpcu121
 ```
 
 ## Install dependencies
 
-```bash
+```powershell
 # PyTorch
 
 pip install torch==2.4.1 torchvision==0.19.1 torchaudio==2.4.1 --index-url https://download.pytorch.org/whl/cu121
@@ -66,6 +66,7 @@ cd ../../../..
 
 # Build PyTorch3D from source
 # Requires MSVC v14 or higher
+# https://github.com/facebookresearch/pytorch3d
 
 pip install "git+https://github.com/facebookresearch/pytorch3d.git@v0.7.7"
 
@@ -76,28 +77,34 @@ conda env update --file cu121.environment.yml
 
 ## Run a training session
 
-```bash
+⚠️ I did not actually try this.
+
+```powershell
 python train.py --config configs/pretrain.yml
 ```
 
 ## Run finetuning
 
-```bash
+⚠️ I did not actually try this.
+
+```powershell
 python finetune.py --config finetune/configs/ISLR_MSASL.yml
 --ckpt checkpoints/pretrain/ckpts/<CKPT_NAME>.ckpt
 ```
 
 ## Visualize logs with Tensorboard
 
-```bash
+⚠️ I did not actually try this.
+
+```powershell
 tensorboard --logdir <LOGS_DPATH>
 ```
 
 ## Create visualization
 
-First, install [pytorch3d](https://github.com/facebookresearch/pytorch3d/blob/main/INSTALL.md)
+⚠️ I did not actually try this.
 
-```bash
+```powershell
 cd visualization
 python create_visualization.py
 ```
